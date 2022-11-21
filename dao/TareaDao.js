@@ -17,7 +17,9 @@ const TareaEsquema_1 = __importDefault(require("../esquemas/TareaEsquema"));
 class TareaDao {
     static consultarTareas(res) {
         return __awaiter(this, void 0, void 0, function* () {
+            console.log("entro a consultar taras");
             const datos = yield TareaEsquema_1.default.find().sort({ _id: -1 });
+            console.log(datos);
             res.status(200).json(datos);
         });
     }
@@ -51,8 +53,10 @@ class TareaDao {
         return __awaiter(this, void 0, void 0, function* () {
             //en esta line se hace una consulta
             //const existe = await TareaEsquema.findById(identificador);
+            console.log("inicio borrado");
             const existe = yield TareaEsquema_1.default.findById(identificador).exec();
             if (existe) {
+                console.log("encontro que existe");
                 TareaEsquema_1.default.findByIdAndDelete(identificador, (miError, MiObjeto) => {
                     if (miError) {
                         res.status(400).json({ respuesta: "No se puede Eliminar socio paila " });

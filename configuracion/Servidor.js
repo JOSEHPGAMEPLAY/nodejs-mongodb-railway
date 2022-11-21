@@ -18,6 +18,7 @@ class Servidor {
         this.app = (0, express_1.default)();
         this.iniciarconfig();
         this.iniciarRutas();
+        console.log("paso por el constructor ");
     }
     ;
     iniciarconfig() {

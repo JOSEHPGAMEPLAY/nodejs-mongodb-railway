@@ -11,4 +11,4 @@ const TareaEsquema = new mongoose_1.Schema({
     itemName: { type: String, required: true },
     componentes: { type: [ComponenteEsquema_1.default], required: true }
 }, { versionKey: false });
-exports.default = (0, mongoose_1.model)("Tarrea", TareaEsquema, "Tarea");
+exports.default = (0, mongoose_1.model)("Tarea", TareaEsquema, "Tarea");
